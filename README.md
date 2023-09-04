@@ -49,7 +49,8 @@ This is one way to run your app — you can also run it directly from within And
 ## what is included
 
 1. bottom tabs are per the design
-   2.There is a dashboard page in which data is there where i have used the mock data
-   3.i have used flatlist to show discover crouser
-   4.I have shown the chart of various month also using the mock data
-   5.For calender as well , i have given the mock dates
+2. There is a dashboard page in which data is there where i have used the mock data
+3. i have used flatlist to show discover crouser
+4. I have shown the chart of various month also using the mock data
+5. For calender as well , i have given the mock dates
+  
