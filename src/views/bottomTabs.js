@@ -1,43 +1,59 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Dashboard} from './dashboard';
 import Logos from '../components/svgIcons';
+import { Wallet } from './wallet';
+import { Guide } from './guide';
+import { Chart } from './chart';
 const screenOptions = {
+  tabBarActiveTintColor: "rgba(3, 115, 243, 1)",
+  tabBarInactiveTintColor: "rgba(188, 188, 188, 1)",
   headerShown: false,
   tabBarHideOnKeyboard: true,
+  
+  
 };
 const Tab = createBottomTabNavigator();
 const BottomTabs = () => {
   return (
     <Tab.Navigator
+     
       screenOptions={screenOptions}
-      tabBarOptions={{showLabel: false}}
+      tabBarOptions={{showLabel: true}}
       initialRouteName="dashBoard">
       <Tab.Screen
         name="dashBoard"
         component={Dashboard}
         options={{
-          tabBarIcon: tabInfo => <Logos icon="dashboard" />,
+          tabBarLabel: 'Home',
+          tabBarLabelStyle:{fontSize:14,fontWeight:400},
+          tabBarIcon: (tabInfo) => (!tabInfo.focused ? <Logos icon="home" /> : <Logos icon="homeBlue" />),
         }}
       />
       <Tab.Screen
-        name="graph"
-        component={Dashboard}
+        name="Wallet"
+        component={Wallet}
         options={{
-          tabBarIcon: tabInfo => <Logos icon="graph" />,
+          tabBarLabel: 'Wallet',
+          tabBarLabelStyle:{fontSize:14,fontWeight:400},
+          tabBarIcon: (tabInfo) => (!tabInfo.focused ? <Logos icon="wallet" /> : <Logos icon="walletBlue" />),
         }}
       />
       <Tab.Screen
-        name="calendar"
-        component={Dashboard}
+        name="Guide"
+        component={Guide}
         options={{
-          tabBarIcon: tabInfo => <Logos icon="calendar" />,
+          tabBarLabel: 'Guide',
+          tabBarLabelStyle:{fontSize:14,fontWeight:400},
+          tabBarIcon: (tabInfo) => (!tabInfo.focused ? <Logos icon="guideSilver" /> : <Logos icon="guideBlue" />),
         }}
       />
       <Tab.Screen
-        name="myaccount"
-        component={Dashboard}
+        name="chart"
+        component={Chart}
         options={{
-          tabBarIcon: tabInfo => <Logos icon="myAccount" />,
+          tabBarLabel: 'Chart',
+          tabBarLabelStyle:{fontSize:14,fontWeight:400},
+          tabBarIcon: (tabInfo) => (!tabInfo.focused ? <Logos icon="chartSilver" /> : <Logos icon="chartBlue" />),
         }}
       />
     </Tab.Navigator>
